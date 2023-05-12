@@ -1,14 +1,24 @@
+from typing import List, Optional
+from datetime import date
+
+from .author import Author
+
+
+class Category:
+    def __init__(self, name: str, description: str):
+        self.name = name
+        self.description = description
 
 
 class Book:
 
-    def __init__(self, title, authors, pages, release_year, price, category):
+    def __init__(self, title: str, authors: List[Author], pages: int, release_year: date, price: int, categories: Optional[List[Category]]=None):
         self._title = title
         self._authors = authors
         self._pages = pages
         self._release_year = release_year
         self._price = price
-        self._category = category
+        self._categories = categories
 
     @property
     def title(self):
@@ -23,7 +33,7 @@ class Book:
         return self._authors
 
     @authors.setter
-    def authors(self, author):
+    def authors(self, author: Author):
         self._authors.append(author)
 
     @property
@@ -52,3 +62,7 @@ class Book:
 
     def __str__(self):
         return f'Book<name: {self._title}>'
+
+    def __repr__(self):
+        return f'Book({self._title}, {self._release_year}, {self.authors})'
+

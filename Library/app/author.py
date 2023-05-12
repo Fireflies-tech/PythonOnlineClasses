@@ -1,10 +1,11 @@
+from typing import Optional, List
 
 from .person import Person
 
 
 class Author(Person):
 
-    def __init__(self, name, age, address=None, books=None):
+    def __init__(self, name: str, age: int, address: Optional[str] = None, books: Optional[List] = None):
         super().__init__(name, age, address)
         self._books = books or []
 
@@ -18,3 +19,7 @@ class Author(Person):
 
     def __str__(self):
         return f'Author<name: {self._name}>'
+
+    def __repr__(self) -> str:
+        return f'Author({self._name})'
+
