@@ -2,6 +2,26 @@ from typing import List
 from .book import Book
 
 
+class LibraryIter:
+
+    def __init__(self, library):
+        self._books = library._BOOKS
+        self._index = 0
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self._index < len(self._books):
+            book = self._books[self._index]
+
+            self._index += 1
+
+            return book
+
+        raise StopIteration
+
+
 class Library:
     _BOOKS: List[Book] = []
 
@@ -13,7 +33,7 @@ class Library:
         return f'Library have {len(self._BOOKS)} Books'
 
     def show_books(self):
-        for book in self._BOOKS:
+        for book in self:
             print(repr(book))
 
     @classmethod
@@ -22,6 +42,9 @@ class Library:
 
     def __str__(self) -> str:
         return f'Library<name: {self._name}>'
+
+    def __iter__(self):
+        return LibraryIter(self)
 
 
 if __name__ == "__main__":

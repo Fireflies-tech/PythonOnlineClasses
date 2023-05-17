@@ -35,6 +35,7 @@ for book in books:
 
 print(library.get_books_count())
 
-library.show_books()
 
+for book in library:
+    print(repr(book))
 
