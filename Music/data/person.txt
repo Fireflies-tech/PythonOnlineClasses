@@ -1,0 +1,3 @@
+{'full_name': 'Hamazasp Frangulyan', 'age': 85, 'email': 'hamazasp.frangulyan17@mail.ru', 'country': 'Armenia', 'password': '2e46e34e-9c57-44a4-bbe1-590a67b408ba'}
+{'full_name': 'Gohar Petrosyan', 'age': 26, 'email': 'gohar.petrosyan@mail.ru', 'country': 'Armenia', 'password': '2d312948-4b88-4fe0-a78c-ece912ae7feb'}
+{'full_name': 'Hamo Frangulyan', 'age': 85, 'email': 'hamazasp.frangulyan17@mail.ru', 'country': 'Russia', 'password': '2e46e34e-9c57-44a4-bbe1-590a67b408ba'}
